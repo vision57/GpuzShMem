@@ -40,7 +40,11 @@ extern "C" __declspec(dllexport) void * __stdcall GetSensorName(int index)
 
 extern "C" __declspec(dllexport) double __stdcall GetSensorValue(int index)
 {
-	return (lpMem->sensors[index]).value;
+	double r;
+	while (InterlockedCompareExchange(&lpMem->busy, 1, 0) != 0);
+	r = (lpMem->sensors[index]).value;
+	InterlockedExchange(&lpMem->busy, 0);
+	return r;
 }
 
 extern "C" __declspec(dllexport) void * __stdcall GetSensorUnit(int index)
