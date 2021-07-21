@@ -11,16 +11,20 @@ Here is a short snippet from the demo project, showing how the shared memory can
 
 Code:
 
+```csharp
 GpuzWrapper gpuz = new GpuzWrapper();
 gpuz.Open();
 Console.WriteLine(gpuz.DataKey(0) + ": " + gpuz.DataValue(0));
 Console.WriteLine(gpuz.SensorName(0) + ": " + gpuz.SensorValue(0) + " " + gpuz.SensorUnit(0));
 gpuz.Close();
+```
 
 Output:
 
+```
 DirectXSupport: 11.0
 GPU Core Clock: 732,1149 MHz
+```
 
 The C# code is pretty straight forward. Please don't mind that I might have not used some fancy C# stuff that would have made the GpuzWrapper more convenient, but actually I'm a Java developer that programmed the whole thing 4 years ago..
 
