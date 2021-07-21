@@ -60,19 +60,19 @@ namespace GpuzDemo
 {
     class GpuzWrapper
     {
-        [DllImport(@"GpuzShMem.dll")]
+        [DllImport(@"GpuzShMem.Win32.dll")]
         private static extern int InitGpuzShMem();
-        [DllImport(@"GpuzShMem.dll")]
+        [DllImport(@"GpuzShMem.Win32.dll")]
         private static extern int RemGpuzShMem();
-        [DllImport(@"GpuzShMem.dll")]
+        [DllImport(@"GpuzShMem.Win32.dll")]
         private static extern IntPtr GetSensorName(int index);
-        [DllImport(@"GpuzShMem.dll")]
+        [DllImport(@"GpuzShMem.Win32.dll")]
         private static extern double GetSensorValue(int index);
-        [DllImport(@"GpuzShMem.dll")]
+        [DllImport(@"GpuzShMem.Win32.dll")]
         private static extern IntPtr GetSensorUnit(int index);
-        [DllImport(@"GpuzShMem.dll")]
+        [DllImport(@"GpuzShMem.Win32.dll")]
         private static extern IntPtr GetDataKey(int index);
-        [DllImport(@"GpuzShMem.dll")]
+        [DllImport(@"GpuzShMem.Win32.dll")]
         private static extern IntPtr GetDataValue(int index);
 
         /// <summary>
